@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tropicla Smoothie Cafe</title>
+	<link rel="stylesheet" type="text/css" href="../assets/stylesheets/styles.css">
+	<!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+<![endif]-->
+</head>
+<body>
+	<% include partials/header.ejs %>
+  <% include partials/user-navigation.ejs %>
+  <% include partials/site-navigation.ejs %>
+	<main>
+		<section class="catsec">
+			<%for(var i=0;i<categories.length;i++){%>
+				<h3><%=categories[i].categoryName%></h3>
+				<ul>
+					<% for(var j=0;j<items.length;j++){
+								if(categories[i].categoryName === items[j].catalogCategory){ %>
+									<li class="cat">
+										<a href="/categories/item?itemCode=<%=items[j].itemCode%>"><%= items[j].itemName%></a>
+									</li>
+							<%	}
+					} %>
+				</ul>
+				<%}%>
+		</section>
+	</main>
+	<% include partials/footer.ejs %>
+</body>
+</html>

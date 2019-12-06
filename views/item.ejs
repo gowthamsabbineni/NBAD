@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tropicla Smoothie Cafe</title>
+	<link rel="stylesheet" type="text/css" href="../assets/stylesheets/styles.css">
+	<!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+<![endif]-->
+</head>
+<body>
+	<% include partials/header.ejs %>
+  <% include partials/user-navigation.ejs %>
+  <% include partials/site-navigation.ejs %>
+	<main>
+		<p class="message"><%= message %></p>
+		<h4>Categories > <%= item.catalogCategory %> </h4>
+		<div>
+			<div class="imgdiv">
+				<img class="itemimg" src="../assets/images/<%= item.image %>" alt="<%= item.itemName %>">
+			</div>
+			<div class="titlediv">
+				<div>
+					<p> <%= item.itemName %> <br> Smoothie </p>
+					<%if(item.avgUserRating === "5"){%>
+						<p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+					<%}%>
+					<%if(item.avgUserRating === "4"){%>
+						<p>&#9733; &#9733; &#9733; &#9733; </p>
+					<%}%>
+					<%if(item.avgUserRating === "3"){%>
+						<p>&#9733; &#9733; &#9733;</p>
+					<%}%>
+					<%if(item.avgUserRating === "2"){%>
+						<p>&#9733; &#9733;</p>
+					<%}%>
+					<%if(item.avgUserRating === "1"){%>
+						<p>&#9733;</p>
+					<%}%>
+				</div>
+
+			</div>
+			<div class="saveratediv">
+				<button class="savebtn" onclick="window.location.href = '/myitems?action=saveIt&itemCode=<%= item.itemCode%>&itemName=<%= item.itemName%>&catalogCategory=<%= item.catalogCategory%>'">Save It</button>
+				<button class="ratebtn" onclick="window.location.href = '/myitems?action=rateIt&itemCode=<%= item.itemCode%>&itemName=<%= item.itemName%>&catalogCategory=<%= item.catalogCategory%>'">Rate It</button>
+		    </div>
+		</div>
+		<div class="sdescription">
+			<h4> Description </h4>
+			<p><%= item.description %>
+			</p>
+		</div>
+		<a class="return" href="/categories">Return</a>
+	</main>
+	<% include partials/footer.ejs %>
+</body>
+</html>

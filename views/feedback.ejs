@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tropicla Smoothie Cafe</title>
+	<link rel="stylesheet" type="text/css" href="../assets/stylesheets/styles.css">
+	<!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+<![endif]-->
+</head>
+<body>
+	<% include partials/header.ejs %>
+  <% include partials/user-navigation.ejs %>
+  <% include partials/site-navigation.ejs %>
+	<main>
+		<h4>Give your feedback for Item</h4>
+		<div>
+			<div class="imgdiv">
+				<img class="itemimg" src="../assets/images/<%= updateItemObj.image %>" alt="<%= updateItemObj.itemName %>">
+			</div>
+			<div class="titlediv">
+				<div>
+					<p> <%=updateItemObj.itemName%> Smoothie </p>
+				</div>
+			</div>
+			<form method="POST" class="feedbackform" action="/action?action=feedback&itemCode=<%= updateItemObj.itemCode%>">
+			<div class="rateDDDiv">
+				<label for="myRating">Rating:</label>
+				<select class="ratingDD" id="myRating" name="myRating">
+					<option value="0" <%if(updateItemObj.rating==0){%> selected <%}%>>0 Star</option>
+					<option value="1" <%if(updateItemObj.rating==1){%> selected <%}%>>1 Star</option>
+					<option value="2" <%if(updateItemObj.rating==2){%> selected <%}%>>2 Star</option>
+					<option value="3" <%if(updateItemObj.rating==3){%> selected <%}%>>3 Star</option>
+					<option value="4" <%if(updateItemObj.rating==4){%> selected <%}%>>4 Star</option>
+					<option value="5" <%if(updateItemObj.rating==5){%> selected <%}%>>5 Star</option>
+				</select>
+			</div>
+			<div>
+				<label for="triedIt">Tried It</label>
+	  			<input type="radio" name="triedIt" value="Yes" <%if(updateItemObj.triedIt=='Yes'){%> checked <%}%>> Yes
+	  			<input type="radio" name="triedIt" value="No" <%if(updateItemObj.triedIt=='No'){%> checked <%}%>> No
+			</div>
+			<div>
+				<input type="submit" value="Submit">
+			</div>
+			</form>
+
+		<div class="sdescription">
+			<h4> Description </h4>
+			<p><%=updateItemObj.description%>
+			</p>
+		</div>
+	</main>
+	<% include partials/footer.ejs %>
+</body>
+</html>

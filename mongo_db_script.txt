@@ -1,0 +1,88 @@
+// Using the db
+use CafeDB
+
+//Collection creation
+
+db.createCollection("categories");
+db.createCollection("items");
+db.createCollection("users");
+db.createCollection("useritems");
+db.categories.insertMany([{"categoryName":"Classic Smoothies"},
+    {"categoryName":"Superfood Smoothies"}]);
+
+//Inserting Data
+
+db.items.insertMany([  
+   {  
+      "itemCode":"C1",
+      "itemName":"Sunrise Sunset",
+      "catalogCategory":"Classic Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain Oranges,peeled Frozen mango chunks,Frozen pineapple chunks,Orange juice,Ice,Sugar",
+      "avgUserRating":"5",
+      "image":"sunrise.png"
+   },
+   {  
+      "itemCode":"C2",
+      "itemName":"Jetty Punch",
+      "catalogCategory":"Classic Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contains Strawberry,Banana,Ice,Sugar",
+      "avgUserRating":"4",
+      "image":"jettypunch.png"
+   },
+   {  
+      "itemCode":"C3",
+      "itemName":"Mango Magic",
+      "catalogCategory":"Classic Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain peeled Frozen mango chunks,Frozen pineapple chunks,Yogurt,Ice,Sugar",
+      "avgUserRating":"4",
+      "image":"mangomagic.png"
+   },
+   {  
+      "itemCode":"C4",
+      "itemName":"Kiwi Quencher",
+      "catalogCategory":"Classic Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain Kiwi juice,Strawberry,yogurt,Ice,Sugar",
+      "avgUserRating":"4",
+      "image":"kiwiquencher.png"
+   },
+   {  
+      "itemCode":"S1",
+      "itemName":"Health Nut",
+      "catalogCategory":"Superfood Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain Blueberrys,Banana,Whey protien,Ice,Sugar",
+      "avgUserRating":"5",
+      "image":"healthnut.png"
+   },
+   {  
+      "itemCode":"S2",
+      "itemName":"Island Green",
+      "catalogCategory":"Superfood Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain Kale and Spinach,peeled Frozen mango chunks,Frozen pineapple chunks,Banana,Ice,Sugar",
+      "avgUserRating":"5",
+      "image":"islandgreen.png"
+   },
+   {  
+      "itemCode":"S3",
+      "itemName":"Avocolada",
+      "catalogCategory":"Superfood Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain Coconut juice,Kale and Spinach,Frozen pineapple chunks,Avocado,Ice,Sugar",
+      "avgUserRating":"5",
+      "image":"avocolada.png"
+   },
+   {  
+      "itemCode":"S4",
+      "itemName":"Peanut Paradise",
+      "catalogCategory":"Superfood Smoothies",
+      "description":"A smoothie can be described as a beverage or drink made from blended fruits and raw vegetables. But the ingredients of this kind of beverage do not have to be limited to these two elements. You can include just about anything in your blender including crushed ice, water, fruit juice, honey, sugar, artificial sweeteners, nuts, chocolate, cookies, seeds, herbal products, herbal supplements, and more. This smoothie will contain peanut butter,Banana,Whey protein,Ice,Sugar",
+      "avgUserRating":"4",
+      "image":"peanutparadise.png"
+   }
+]);
+
+db.users.insertMany([{"userId":"user1","password":"user1","firstName":"Gowtham","lastName":"Sabbineni","emailAddress":"gowtham@gmail.com","address1Field":"apt C","address2Field":"diploma dr","city":"Charlotte","state":"NC","zipCode":"28262","country":"USA"},{"userId":"user2","password":"user2","firstName":"Runa","lastName":"Runa","emailAddress":"runa@gmail.com","address1Field":"apt C","address2Field":"diploma dr","city":"Charlotte","state":"NC","zipCode":"28262","country":"USA"}
+]);
+
+db.useritems.insertMany([{"userId":"user1","itemCode":"C4","rating":"5","triedIt":"No","itemName":"Kiwi Quencher","catalogCategory":"Classic Smoothies"},{"userId":"user2","itemCode":"C1","rating":"5","triedIt":"Yes","itemName":"Sunrise Sunset","catalogCategory":"Classic Smoothies"}
+
+]);
+

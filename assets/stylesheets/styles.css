@@ -1,0 +1,195 @@
+body,footer,div,nav,p,ul,h1,h2,h3,h4,h5,h6 {
+	margin:0px;
+}
+.headerlogo{
+	height:50px;
+	width:200px;
+	margin-top: 5px;
+}
+.headeralign{
+	text-align: center;
+}
+.usenametxt{
+	text-align: right;
+	margin: 0px;
+	padding: 2px 10px 0px 0px;
+}
+.headnavbar{
+	background-color: #DF2B12;
+    text-align: center;
+    min-height: 40px;
+    padding: 15px 0px 0px 0px;
+}
+.list{
+	display: inline;
+	padding: 0px 10px 0px 10px;
+	font-size: 20px;
+}
+li>a{
+	color:white;
+	text-decoration: none;
+}
+li.cat>a {
+	color:#ca0c0c;
+	text-decoration: none;
+}
+.sidebarul{
+	background-color:#969300;
+	height:60%;
+}
+.sidebardiv{
+	height:688px;
+    width: 200px;
+    float:left;
+    margin-top:1px;
+}
+.sidelist{
+	display: block;
+	padding: 2px 2px 0px 0px;
+	font-size: 20px;
+
+}
+.welcometxtdiv{
+	padding:10px 0px 0px 10px;
+}
+.welcometxt{
+	color:black;
+	font-size: 20px;
+}
+main {
+	margin-left:225px;
+	margin-top:10px;
+	min-height: 100%;
+	overflow: auto;
+}
+.footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;
+   background:#F7A800;
+}
+div.footer>h4{
+	padding-top:20px;
+}
+
+li:hover{
+    background-color:#F48024;
+    color: #000000;
+}
+section {
+	width:30%;
+}
+
+.itemimg{
+	width:150px;
+	height:210px;
+	margin: 0px;
+}
+.imgdiv{
+	width:150px;
+	float:left;
+}
+.titlediv{
+	width:500px;
+}
+div.titlediv>div{
+	font-size: 20px;
+	padding-top: 55px;
+	margin:0px;
+}
+.saveratediv{
+	margin-top: 10px;
+}
+.sdescription{
+	margin-top:55px;
+}
+button{
+	height:25px;
+	width:70px;
+}
+
+.savebtn{
+	background: url("../images/like.svg") left center no-repeat;
+	padding-left:12px;
+	background-size:15px;
+}
+
+.ratebtn{
+	background: url("../images/star.svg") left center no-repeat;
+	padding-left:12px;
+	background-size:15px;
+}
+
+
+/*Table styling*/
+table {
+	border-collapse: collapse;
+}
+tr{
+	text-align: left;
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+thead{
+	background:lightslategray;
+}
+th{
+	border: 1.5px solid black;
+	padding-left: 3px;
+	width:150px;
+	height:30px;
+}
+.colbtn{
+	width:200px;
+	text-align: center;
+}
+table td{
+	border: 1.5px solid black;
+	height: 60px;
+}
+.catsec{
+	margin-top: 25px;
+}
+.share{
+	position:absolute;
+   	bottom:70px;
+}
+.return{
+	position: absolute;
+  bottom:150px;
+}
+.contactUs{
+	width: 80%;
+  max-height: 230px;
+}
+.rateDDDiv, .rateBtnDiv{
+	padding:15px
+}
+.cnfmratingbtn, .havtriedBtn{
+	height:30px;
+	width:120px;
+}
+.ratingDD{
+	width: 67px;
+  block-size: 30px;
+}
+.ppadding{
+	padding:10px
+}
+.hpadding{
+	padding:10px;
+}
+.feedbackform>div{
+	padding:8px;
+}
+.message{
+	color: red;
+	font-size: 24px;
+}
+.loginForm{
+	display:grid;
+	width:50px;
+	min-height: 150px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tropicla Smoothie Cafe</title>
+	<link rel="stylesheet" type="text/css" href="../assets/stylesheets/styles.css">
+	<!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+<![endif]-->
+</head>
+<body>
+	<% include partials/header.ejs %>
+  <% include partials/user-navigation.ejs %>
+  <% include partials/site-navigation.ejs %>
+	<main>
+    <div>
+				<h2>Welcome to Tropical Smoothie Cafe!</h2>
+        <h4>Please Enter Username and Password to access the content</h4>
+            <form class="loginForm" method="POST"  action="/signin?action=signin">
+                  <label>Username</label>
+                  <input type="text" name="Username" size="40" />
+                  <label>Password</label>
+                  <input type="password" name="Password" size="40" />
+
+            <button type="submit" name="login" value="login">Log In</button>
+
+            </form>
+        <% if(status == "failed") { %>
+            <h4 class='red'>Either username or password are incorrect. Please try again</h4>
+        <% }%>
+			</div>
+  </main>
+      <% include partials/footer.ejs %>
+  </body>
+  </html>
